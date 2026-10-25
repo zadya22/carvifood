@@ -1,0 +1,1413 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Carvi Food - Toujours meilleur à chaque bouchée</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="C:/Users/acer/Desktop/Quelque soit la situation je réussis/CARVI FOOD/Site Carvi Food 2026/logocarvi.png">
+  <style>
+
+
+     
+     .lang-btn {
+          padding: 6px 10px;
+          font-size: 0.85rem;
+          border: 1px solid #ccc;
+          border-radius: 6px;
+          cursor: pointer;
+          background: white;
+        }
+
+        .lang-btn:hover {
+          background: #eee;
+        } 
+
+    :root {
+      --orange: #ff7a00;
+      --black: #111111;
+      --white: #ffffff;
+      --grey: #f5f5f5;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+
+    body {
+      background: var(--white);
+      color: var(--black);
+      line-height: 1.6;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 30;
+      background: rgba(255,255,255,0.96);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid #eee;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 16px;
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 14px 0;
+    }
+
+    .logo {
+      font-weight: 800;
+      font-size: 1.4rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--black);
+    }
+
+    .logo span {
+      color: var(--orange);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 20px;
+      font-size: 0.95rem;
+      align-items: center;
+    }
+
+    .nav-links a {
+      position: relative;
+      padding-bottom: 4px;
+    }
+
+    .nav-links a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 0;
+      height: 2px;
+      background: var(--orange);
+      transition: width 0.2s ease;
+    }
+
+    .nav-links a:hover::after {
+      width: 100%;
+    }
+
+    .nav-actions {
+      display: flex;
+      gap: 12px;
+      align-items: center;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 10px 18px;
+      border-radius: 999px;
+      font-size: 0.95rem;
+      font-weight: 600;
+      border: none;
+      cursor: pointer;
+      transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.2s ease;
+      text-align: center;
+      white-space: nowrap;
+      background: transparent;
+    }
+
+    .btn-primary {
+      background: var(--orange);
+      color: var(--white);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 12px 24px rgba(0,0,0,0.16);
+    }
+
+    .btn-outline {
+      background: transparent;
+      color: var(--black);
+      border: 1px solid var(--black);
+      padding: 8px 14px;
+      border-radius: 999px;
+    }
+
+    .btn-outline:hover {
+      background: var(--black);
+      color: var(--white);
+    }
+
+    /* cart icon */
+    .cart-btn {
+      position: relative;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 12px;
+      border-radius: 999px;
+      border: 1px solid rgba(0,0,0,0.06);
+      cursor: pointer;
+      background: #fff;
+    }
+
+    .cart-count {
+      position: absolute;
+      top: -6px;
+      right: -6px;
+      min-width: 20px;
+      height: 20px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 999px;
+      background: var(--orange);
+      color: #fff;
+      font-size: 0.75rem;
+      font-weight: 700;
+      padding: 0 6px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.12);
+    }
+
+    /* Hero */
+    .hero {
+      padding: 60px 0 40px;
+      z-index: 1;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 1fr;
+      gap: 40px;
+      align-items: center;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.8rem;
+      padding: 4px 10px;
+      border-radius: 999px;
+      background: #fff4e8;
+      color: var(--orange);
+      font-weight: 600;
+      margin-bottom: 14px;
+    }
+
+    .hero h1 {
+      font-size: 2.4rem;
+      margin-bottom: 16px;
+    }
+
+    .hero p {
+      font-size: 1rem;
+      color: #444;
+      margin-bottom: 22px;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      align-items: center;
+      margin-bottom: 14px;
+    }
+
+    .hero-note {
+      font-size: 0.85rem;
+      color: #666;
+    }
+
+    .hero-card {
+      background: var(--black);
+      color: var(--white);
+      border-radius: 18px;
+      padding: 26px 22px;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      box-shadow: 0 14px 32px rgba(0,0,0,0.25);
+    }
+
+    .hero-card-title {
+      font-size: 1.05rem;
+      font-weight: 600;
+    }
+
+    .hero-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      font-size: 0.8rem;
+    }
+
+    .tag {
+      padding: 4px 10px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,0.25);
+      opacity: 0.9;
+    }
+
+    /* Sections */
+    section {
+      padding: 50px 0;
+    }
+
+    section:nth-of-type(even) {
+      background: var(--grey);
+    }
+
+    .section-title {
+      font-size: 1.8rem;
+      margin-bottom: 10px;
+      text-align: center;
+    }
+
+    .section-subtitle {
+      font-size: 0.95rem;
+      color: #555;
+      text-align: center;
+      max-width: 520px;
+      margin: 0 auto 30px;
+    }
+
+    /* About */
+    .about-text {
+      max-width: 760px;
+      margin: 0 auto;
+      font-size: 0.98rem;
+      color: #333;
+      text-align: center;
+    }
+
+    /* Produits */
+    .products-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0,1fr));
+      gap: 18px;
+    }
+
+    .product-card {
+      background: var(--white);
+      border-radius: 16px;
+      padding: 16px 14px 18px;
+      box-shadow: 0 8px 18px rgba(0,0,0,0.04);
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .product-tag {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--orange);
+      font-weight: 700;
+    }
+
+    .product-name {
+      font-weight: 600;
+      font-size: 1rem;
+    }
+
+    .product-desc {
+      font-size: 0.9rem;
+      color: #555;
+    }
+
+    .product-price-main {
+      font-weight: 700;
+      font-size: 0.95rem;
+      margin-top: 4px;
+    }
+
+    .product-price-bulk {
+      font-size: 0.82rem;
+      color: #666;
+    }
+
+    .product-footer {
+      margin-top: auto;
+      display: flex;
+      justify-content: flex-start;
+      gap: 8px;
+      align-items: center;
+    }
+
+    /* Tarifs bloc */
+    .pricing-card {
+      max-width: 520px;
+      margin: 0 auto;
+      background: var(--black);
+      color: var(--white);
+      border-radius: 18px;
+      padding: 22px 20px;
+    }
+
+    .pricing-card h3 {
+      margin-bottom: 12px;
+      font-size: 1.1rem;
+    }
+
+    .pricing-line {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.9rem;
+      padding: 5px 0;
+      border-bottom: 1px dashed rgba(255,255,255,0.1);
+    }
+
+    .pricing-line:last-child {
+      border-bottom: none;
+    }
+
+    /* Comment commander */
+    .steps {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0,1fr));
+      gap: 16px;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .step {
+      background: var(--white);
+      border-radius: 16px;
+      padding: 18px 16px;
+      box-shadow: 0 8px 18px rgba(0,0,0,0.04);
+    }
+
+    .step-number {
+      width: 26px;
+      height: 26px;
+      border-radius: 999px;
+      background: var(--orange);
+      color: var(--white);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.8rem;
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+
+    .step-title {
+      font-weight: 600;
+      margin-bottom: 4px;
+      font-size: 0.95rem;
+    }
+
+    .step-text {
+      font-size: 0.88rem;
+      color: #555;
+    }
+
+    /* FAQ */
+    .faq-grid {
+      max-width: 800px;
+      margin: 0 auto;
+      display: grid;
+      gap: 14px;
+    }
+
+    .faq-item {
+      background: var(--white);
+      border-radius: 14px;
+      padding: 14px 16px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.03);
+    }
+
+    .faq-q {
+      font-weight: 600;
+      font-size: 0.95rem;
+      margin-bottom: 4px;
+    }
+
+    .faq-a {
+      font-size: 0.88rem;
+      color: #555;
+    }
+
+    /* Contact */
+    .contact-box {
+      max-width: 520px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .contact-box p {
+      font-size: 0.94rem;
+      color: #555;
+      margin-bottom: 16px;
+    }
+
+    footer {
+      padding: 18px 0 24px;
+      background: #000;
+      color: rgba(255,255,255,0.7);
+      font-size: 0.8rem;
+      text-align: center;
+      margin-top: auto;
+    }
+
+    /* Responsive */
+    @media (max-width: 900px) {
+      .hero-grid {
+        grid-template-columns: 1fr;
+      }
+      .products-grid {
+        grid-template-columns: repeat(2, minmax(0,1fr));
+      }
+      .steps {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .nav-links {
+        display: none;
+      }
+      .products-grid {
+        grid-template-columns: 1fr;
+      }
+      .hero h1 {
+        font-size: 1.9rem;
+      }
+      section {
+        padding: 40px 0;
+      }
+    }
+
+    .product-img {
+      width: 100%;
+      height: 160px;
+      object-fit: cover;
+      border-radius: 12px;
+      background: #fafafa;
+    }
+
+    /* Cart sidebar */
+    .cart-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.35);
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.18s ease;
+      z-index: 50;
+    }
+
+    .cart-overlay.open {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .cart-sidebar {
+      position: fixed;
+      right: -420px;
+      top: 0;
+      height: 100%;
+      width: 420px;
+      max-width: 100%;
+      background: #fff;
+      box-shadow: -18px 0 40px rgba(0,0,0,0.12);
+      transition: right 0.22s cubic-bezier(.2,.9,.2,1);
+      z-index: 60;
+      display: flex;
+      flex-direction: column;
+      padding: 20px;
+      overflow-y: auto;
+    }
+
+    .cart-sidebar.open {
+      right: 0;
+    }
+
+    .cart-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 12px;
+    }
+
+ .cart-items {
+  display: grid;
+  gap: 12px;
+  padding-right: 6px;
+  /* plus de scroll interne */
+  overflow: visible;
+}
+
+
+    .cart-item {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+      border-radius: 10px;
+      padding: 8px;
+      border: 1px solid #f0f0f0;
+    }
+
+    .cart-item img {
+      width: 72px;
+      height: 56px;
+      object-fit: cover;
+      border-radius: 8px;
+      background: #fafafa;
+    }
+
+    .cart-item-info {
+      flex: 1;
+    }
+
+    .cart-item-name {
+      font-weight: 700;
+      font-size: 0.95rem;
+    }
+
+    .cart-item-qty {
+      display: flex;
+      gap: 6px;
+      align-items: center;
+      margin-top: 8px;
+    }
+
+    .qty-btn {
+      width: 28px;
+      height: 28px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 6px;
+      background: #f5f5f5;
+      cursor: pointer;
+      border: none;
+    }
+
+    .qty-input {
+      width: 44px;
+      text-align: center;
+      border-radius: 6px;
+      border: 1px solid #eee;
+      padding: 6px;
+      font-size: 0.95rem;
+    }
+
+    .cart-footer {
+      margin-top: 12px;
+      border-top: 1px solid #eee;
+      padding-top: 12px;
+    }
+
+    .cart-summary-line {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 8px;
+      font-weight: 700;
+    }
+
+    .cart-form {
+      display: grid;
+      gap: 8px;
+      margin-top: 8px;
+    }
+
+    .cart-form input,
+    .cart-form textarea {
+      width: 100%;
+      border: 1px solid #eee;
+      padding: 10px;
+      border-radius: 10px;
+      font-size: 0.95rem;
+    }
+
+    .small-muted {
+      font-size: 0.82rem;
+      color: #666;
+    }
+
+    .empty-cart {
+      text-align: center;
+      color: #666;
+      padding: 24px 12px;
+    }
+
+    @media (max-width: 600px) {
+      .cart-sidebar {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="container nav">
+    <div class="logo">Carvi<span> Food</span></div>
+
+    <nav class="nav-links" aria-label="Main navigation">
+      <a href="#hero">Accueil</a>
+      <a href="#produits">Nos produits</a>
+      <a href="#commande">Commander</a>
+      <a href="#faq">FAQ</a>
+      <a href="#contact">Contact</a>
+       <a href="C:/Users/acer/Desktop/Quelque soit la situation je réussis/CARVI FOOD/Site Carvi Food 2026/Carvi2026.html" class="lang-btn">FR</a>
+        <a href="C:/Users/acer/Desktop/Quelque soit la situation je réussis/CARVI FOOD/Site Carvi Food 2026/Carvi2026en.html" class="lang-btn">EN</a>
+    </nav>
+
+    <div class="nav-actions">
+      <div class="cart-btn" id="open-cart" title="View cart" aria-haspopup="dialog" aria-controls="cart-sidebar">
+        <!-- simple cart icon -->
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <path d="M3 3h2l1.4 7.2A3 3 0 0 0 9.3 13h8.4a3 3 0 0 0 2.9-2.4L22 5H6" stroke="#111" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+          <circle cx="10" cy="20" r="1" fill="#111"/>
+          <circle cx="18" cy="20" r="1" fill="#111"/>
+        </svg>
+        <span style="font-weight:700;font-size:0.95rem;">Cart</span>
+        <div class="cart-count" id="cart-count">0</div>
+      </div>
+
+      <a href="#contact" class="btn btn-primary">Commander</a>
+    </div>
+  </div>
+</header>
+
+<main>
+  <!-- Hero -->
+  <section class="hero" id="hero">
+    <div class="container hero-grid">
+      <div>
+        <div class="badge">Snacks Premium · Boeuf et mangue séchés</div>
+        <h1>Carvi Food – Viande séchée prémium</h1>
+        <p>
+          Bœuf séché et mangue séchée, soigneusement préparés pour les amateurs de saveurs — pratiques à transporter et irrésistibles au goût.
+        </p>
+        <div class="hero-actions">
+          <a href="#produits" class="btn btn-primary">Voir les produits</a>
+          <a href="#contact" class="btn btn-outline">Commander maintenant</a>
+        </div>
+        <div class="hero-note">
+Conditionnements individuels, formats à partager et tarifs de gros disponibles.
+        </div>
+      </div>
+      <div>
+        <div class="hero-card">
+          <div class="hero-card-title">bœuf séché et mangue séchée</div>
+          <div class="hero-tags">
+            <span class="tag">Qualité supérieure</span>
+            <span class="tag">Prêt à consommer</span>
+            <span class="tag">Idéal pour grignoter</span>
+            <span class="tag">Détail & Gros</span>
+          </div>
+          <div style="font-size:0.9rem; color:rgba(255,255,255,0.9);">
+            Mangue séchée 50g à partir de <strong>800 FCFA</strong> · Boeuf séché 30g à partir de
+            <strong>1 520 FCFA</strong> · format 100g à partir <strong>5 000 FCFA</strong>.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About -->
+  <section id="apropos">
+    <div class="container">
+      <h2 class="section-title">L'art du séchage, la signature de Carvi Food</h2>
+      <p class="section-subtitle">
+Des en-cas délicieux, pratiques et raffinés, conçus pour ceux qui exigent le meilleur.
+      </p>
+      <p class="about-text">
+        A <strong>Carvi Food</strong>, Notre obsession? Sublimer des ingrédients simples en en-cas d'exception. Notre bœuf séché et nos tranches de mangue séchées sont préparés à partir de matières premières soigneusement sélectionnées, grâce à un séchage contrôlé et un mélange d'épices parfaitement équilibré.
+Le résultat : des en-cas de qualité supérieure, savoureux et pratiques, parfaits pour les journées chargées, les voyages ou les moments de partage.
+      </p>
+    </div>
+  </section>
+
+  <!-- Products -->
+  <section id="produits">
+    <div class="container">
+      <h2 class="section-title">Nos produits</h2>
+      <p class="section-subtitle">
+Choisissez vos en-cas préférés : mangue séchée fruitée ou bœuf séché riche en protéines.
+      </p>
+
+      <div class="products-grid" id="products-grid">
+        <!-- Product cards will be inserted by JS for consistency with product list -->
+      </div>
+
+      <br><br>
+
+        <div class="pricing-card">
+        <h3>Résumé des prix</h3>
+
+        <div class="pricing-line">
+          <span>Mangue séchée 50g</span>
+          <span>800 FCFA</span>
+        </div>
+
+        <div class="pricing-line">
+          <span>Bâtonnets de viande séchée épicée</span>
+          <span>6 000 FCFA</span>
+        </div>
+
+        <div class="pricing-line">
+          <span>Viande séchée 30g (détail)</span>
+          <span>1 520 FCFA</span>
+        </div>
+
+        <div class="pricing-line">
+          <span>30g (gros ≥ 24 paquets)</span>
+          <span>1 340 FCFA / unité</span>
+        </div>
+
+        <div class="pricing-line">
+          <span>Viande séchée 100g (détail)</span>
+          <span>5 000 FCFA</span>
+        </div>
+
+        <div class="pricing-line">
+          <span>100g (gros ≥ 8 paquets)</span>
+          <span>4 400 FCFA / unité</span>
+        </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- How to order -->
+  <section id="commande">
+    <div class="container">
+      <h2 class="section-title">Comment commander</h2>
+      <p class="section-subtitle">
+Quelques étapes simples pour recevoir vos produits Carvi Food.
+      </p>
+
+      <div class="steps">
+        <div class="step">
+          <div class="step-number">1</div>
+          <div class="step-title">Choisissez vos produits</div>
+          <div class="step-text">
+            Sélectionnez les produits et les quantités souhaitées : mangue séchée, bâtonnets, viande séchée 30g ou 100g.
+          </div>
+        </div>
+
+        <div class="step">
+          <div class="step-number">2</div>
+          <div class="step-title">Contactez-nous</div>
+          <div class="step-text">
+            Envoyez votre commande via WhatsApp, téléphone ou via le formulaire de contact.
+          </div>
+        </div>
+
+        <div class="step">
+          <div class="step-number">3</div>
+          <div class="step-title">Confirmation & livraison</div>
+          <div class="step-text">
+            Nous confirmons le montant total, le mode de paiement ainsi que les détails de livraison ou de retrait.
+          </div>
+        </div>
+</div>
+
+
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq">
+    <div class="container">
+      <h2 class="section-title">FAQ</h2>
+      <p class="section-subtitle">
+        Questions fréquemment posées sur Carvi Food et nos produits séchés.
+      </p>
+
+      <div class="faq-grid">
+        <div class="faq-item">
+          <div class="faq-q">Comment dois-je conserver vos produits ?</div>
+          <div class="faq-a">
+            Conservez-les dans un endroit sec, à l’abri de la chaleur. Refermez bien le sachet après ouverture pour préserver les saveurs.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-q">Proposez-vous des tarifs de gros ?</div>
+          <div class="faq-a">
+            Oui — à partir de 24 paquets pour le format 30g et 8 paquets pour le format 100g. Contactez-nous pour un devis personnalisé.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-q">La viande est-elle très épicée ?</div>
+          <div class="faq-a">
+            Nos recettes sont parfumées et légèrement épicées. Pour des demandes spécifiques, n’hésitez pas à nous écrire.
+          </div>
+        </div>
+      </div>
+    </div>
+</section>
+
+
+  <!-- Contact -->
+  <section id="contact">
+    <div class="container">
+      <h2 class="section-title">Contact & commandes</h2>
+      <p class="section-subtitle">
+        Un snack premium vous attend. Parlons de votre prochaine commande Carvi Food.
+      </p>
+
+      <div class="contact-box">
+        <p>
+          Pour passer une commande, obtenir un devis de gros ou poser une question, contactez-nous directement.
+        </p>
+        <!-- Remplacez le # par votre lien WhatsApp ou autre -->
+        <a href="https://wa.me/221761397039" class="btn btn-primary">Commander sur WhatsApp</a>
+        <p style="margin-top:10px;font-size:0.85rem;">
+          Marque : <strong>Carvi</strong><br>
+          Tel : +221761397039 | Réseaux : @Carvifood
+        </p>
+      </div>
+    </div>
+</section>
+
+</main>
+
+<footer>
+  © <span id="year">2026</span> Carvi Food · Tous droits reservé.
+</footer>
+
+<!-- Cart overlay & sidebar -->
+<div id="cart-overlay" class="cart-overlay" aria-hidden="true"></div>
+
+<aside id="cart-sidebar" class="cart-sidebar" role="dialog" aria-modal="true" aria-labelledby="cart-title" hidden>
+  <div class="cart-header">
+    <div>
+      <div id="cart-title" style="font-weight:800;font-size:1.05rem;">Your cart</div>
+      <div class="small-muted" id="cart-sub">0 items · 0 FCFA</div>
+    </div>
+    <div style="display:flex;gap:8px;align-items:center">
+      <button id="clear-cart" class="btn-outline" title="Clear cart">Clear</button>
+      <button id="close-cart" aria-label="Close cart" class="btn" style="padding:8px 10px;">✕</button>
+    </div>
+  </div>
+
+  <div class="cart-items" id="cart-items">
+    <div class="empty-cart" id="empty-cart-msg">Your panier est vide. Ajouter des produits pour commencer.</div>
+  </div>
+
+  <div class="cart-footer">
+    <div class="cart-summary-line">
+      <span>Sous total</span>
+      <span id="cart-subtotal">0 FCFA</span>
+    </div>
+
+    <div class="cart-form">
+      <input type="text" id="customer-name" placeholder="Name (optional)" />
+      <input type="tel" id="customer-phone" placeholder="Phone (ex: +221771234567)" />
+      <input type="text" id="customer-address" placeholder="Delivery address" />
+      <textarea id="customer-note" rows="3" placeholder="Additional notes (e.g. delivery time)"></textarea>
+
+      <div style="display:flex;gap:8px;align-items:center">
+        <button id="checkout-whatsapp" class="btn btn-primary" style="flex:1;">Confirmer & envoyer par WhatsApp</button>
+      </div>
+
+      <div class="small-muted" style="text-align:center;margin-top:6px;">
+En cliquant, votre commande sera préparée et envoyée au +221761397039 via WhatsApp.
+      </div>
+    </div>
+  </div>
+</aside>
+
+<script>
+/* === Product data ===
+   Image paths left as provided.
+*/
+const PRODUCTS = [
+  {
+    id: "batonnets-pimente",
+    name: "Bâtonnets de viande séchée épicée",
+    tag: "Viande",
+    price_detail: 6000,
+    bulk_threshold: null,
+    bulk_price: null,
+    img: "C:/Users/acer/Desktop/Quelque soit la situation je réussis/CARVI FOOD/Site Carvi Food 2026/viande30.png",
+    desc: "Bâtonnets de viande séchée épicée, riches et protéinés."
+  },
+  {
+    id: "viande-30-sale",
+    name: "Viande séchée 30g Salée",
+    tag: "Viande",
+    price_detail: 1520,
+    bulk_threshold: 24,
+    bulk_price: 1340,
+    img: "C:/Users/acer/Desktop/Quelque soit la situation je réussis/CARVI FOOD/Site Carvi Food 2026/viande30.png",
+    desc: "Format 30g salé – pratique à emporter."
+  },
+  {
+    id: "viande-30-pimente",
+    name: "Viande séchée 30g Épicée",
+    tag: "Viande",
+    price_detail: 1520,
+    bulk_threshold: 24,
+    bulk_price: 1340,
+    img: "C:/Users/acer/Desktop/Quelque soit la situation je réussis/CARVI FOOD/Site Carvi Food 2026/viande30.png",
+    desc: "Format 30g épicé – épices audacieuses."
+  },
+  {
+    id: "viande-30-gingembre",
+    name: "Viande séchée 30g Gingembre",
+    tag: "Viande",
+    price_detail: 1520,
+    bulk_threshold: 24,
+    bulk_price: 1340,
+    img: "C:/Users/acer/Desktop/Quelque soit la situation je réussis/CARVI FOOD/Site Carvi Food 2026/viande30.png",
+    desc: "Format 30g au gingembre – arôme chaleureux."
+  },
+  {
+    id: "viande-30-ail",
+    name: "Viande séchée 30g Ail",
+    tag: "Viande",
+    price_detail: 1520,
+    bulk_threshold: 24,
+    bulk_price: 1340,
+    img: "C:/Users/acer/Desktop/Quelque soit la situation je réussis/CARVI FOOD/Site Carvi Food 2026/viande30.png",
+    desc: "Format 30g à l’ail – goût traditionnel."
+  },
+  {
+    id: "viande-100-sale",
+    name: "Viande séchée 100g Salée",
+    tag: "Viande",
+    price_detail: 5000,
+    bulk_threshold: 8,
+    bulk_price: 4400,
+    img: "C:/Users/acer/Desktop/Quelque soit la situation je réussis/CARVI FOOD/Site Carvi Food 2026/viande30.png",
+    desc: "Format 100g salé – idéal pour partager."
+  },
+  {
+    id: "viande-100-pimente",
+    name: "Viande séchée 100g Épicée",
+    tag: "Viande",
+    price_detail: 5000,
+    bulk_threshold: 8,
+    bulk_price: 4400,
+    img: "C:/Users/acer/Desktop/Quelque soit la situation je réussis/CARVI FOOD/Site Carvi Food 2026/viande30.png",
+    desc: "Format 100g épicé – saveurs intenses."
+  },
+  {
+    id: "viande-100-gingembre",
+    name: "Viande séchée 100g Gingembre",
+    tag: "Viande",
+    price_detail: 5000,
+    bulk_threshold: 8,
+    bulk_price: 4400,
+    img: "C:/Users/acer/Desktop/Quelque soit la situation je réussis/CARVI FOOD/Site Carvi Food 2026/viande30.png",
+    desc: "Format 100g au gingembre – notes aromatiques audacieuses."
+  },
+  {
+    id: "viande-100-ail",
+    name: "Viande séchée 100g Ail",
+    tag: "Viande",
+    price_detail: 5000,
+    bulk_threshold: 8,
+    bulk_price: 4400,
+    img: "C:/Users/acer/Desktop/Quelque soit la situation je réussis/CARVI FOOD/Site Carvi Food 2026/viande30.png",
+    desc: "Format 100g à l’ail – goût riche."
+  }
+
+];
+
+/* === Cart management in localStorage ===
+Structure stored: { items: { [productId]: {id, qty} } }
+*/
+const STORAGE_KEY = "carvi_cart_v1";
+
+function readCart() {
+  try {
+    const raw = localStorage.getItem(STORAGE_KEY);
+    if (!raw) return { items: {} };
+    return JSON.parse(raw);
+  } catch (e) {
+    console.error("Error reading cart", e);
+    return { items: {} };
+  }
+}
+
+function saveCart(cart) {
+  localStorage.setItem(STORAGE_KEY, JSON.stringify(cart));
+}
+
+/* Price calculation with bulk handling */
+function unitPriceFor(product, qty) {
+  if (!product.bulk_threshold) return product.price_detail;
+  if (qty >= product.bulk_threshold) return product.bulk_price;
+  return product.price_detail;
+}
+
+function formatFCFA(n) {
+  return new Intl.NumberFormat('fr-FR').format(n) + " FCFA";
+}
+
+/* UI references */
+const cartCountEl = document.getElementById("cart-count");
+const cartOverlay = document.getElementById("cart-overlay");
+const cartSidebar = document.getElementById("cart-sidebar");
+const cartItemsEl = document.getElementById("cart-items");
+const cartSubEl = document.getElementById("cart-sub");
+const cartSubtotalEl = document.getElementById("cart-subtotal");
+const emptyCartMsg = document.getElementById("empty-cart-msg");
+const openCartBtn = document.getElementById("open-cart");
+const closeCartBtn = document.getElementById("close-cart");
+const clearCartBtn = document.getElementById("clear-cart");
+const checkoutBtn = document.getElementById("checkout-whatsapp");
+
+const customerNameInput = document.getElementById("customer-name");
+const customerPhoneInput = document.getElementById("customer-phone");
+const customerAddressInput = document.getElementById("customer-address");
+const customerNoteInput = document.getElementById("customer-note");
+
+/* Render products grid */
+const productsGrid = document.getElementById("products-grid");
+function renderProducts() {
+  PRODUCTS.forEach(prod => {
+    const card = document.createElement("div");
+    card.className = "product-card";
+    card.innerHTML = `
+      <div class="product-tag">${prod.tag}</div>
+      <div class="product-name">${prod.name}</div>
+      <img src="${prod.img}" alt="${prod.name}" class="product-img" onerror="this.style.opacity=0.6">
+      <div class="product-desc">${prod.desc}</div>
+      <div style="display:flex;flex-direction:column;gap:4px;margin-top:6px;">
+        <div class="product-price-main">${formatFCFA(prod.price_detail)}${prod.bulk_threshold ? ' · Gros à ' + formatFCFA(prod.bulk_price) + (prod.bulk_threshold ? ' à partir de ' + prod.bulk_threshold + ' paquets' : '') : ''}</div>
+      </div>
+      <div class="product-footer">
+        <button class="btn btn-outline add-to-cart" data-id="${prod.id}" style="font-size:0.85rem;padding:8px 12px;">Add</button>
+      </div>
+    `;
+    productsGrid.appendChild(card);
+  });
+}
+
+/* Cart operations */
+function addToCart(productId, qty = 1) {
+  const cart = readCart();
+  const items = cart.items || {};
+  if (!items[productId]) items[productId] = { id: productId, qty: 0 };
+  items[productId].qty = (items[productId].qty || 0) + Number(qty);
+  if (items[productId].qty < 1) delete items[productId];
+  cart.items = items;
+  saveCart(cart);
+  renderCart();
+  //openCart();
+}
+
+function setQty(productId, qty) {
+  const cart = readCart();
+  const items = cart.items || {};
+  qty = Number(qty);
+  if (qty <= 0) {
+    delete items[productId];
+  } else {
+    items[productId] = items[productId] || { id: productId, qty: 0 };
+    items[productId].qty = qty;
+  }
+  cart.items = items;
+  saveCart(cart);
+  renderCart();
+}
+
+function removeItem(productId) {
+  const cart = readCart();
+  const items = cart.items || {};
+  delete items[productId];
+  cart.items = items;
+  saveCart(cart);
+  renderCart();
+}
+
+function clearCart() {
+  saveCart({ items: {} });
+  renderCart();
+}
+
+/* Calculate totals */
+function cartSummary() {
+  const cart = readCart();
+  const items = cart.items || {};
+  let totalQty = 0;
+  let subtotal = 0;
+  const list = [];
+  for (const pid in items) {
+    const entry = items[pid];
+    const product = PRODUCTS.find(p => p.id === pid);
+    if (!product) continue;
+    const qty = Number(entry.qty || 0);
+    const unitPrice = unitPriceFor(product, qty);
+    const lineTotal = unitPrice * qty;
+    subtotal += lineTotal;
+    totalQty += qty;
+    list.push({
+      id: pid,
+      name: product.name,
+      qty,
+      unitPrice,
+      lineTotal
+    });
+  }
+  return { list, subtotal, totalQty };
+}
+
+/* Render cart to sidebar */
+function renderCart() {
+  const summary = cartSummary();
+  // update header count and sub
+  cartCountEl.textContent = summary.totalQty || 0;
+  cartSubEl.textContent = (summary.totalQty || 0) + " item" + ((summary.totalQty > 1) ? "s" : "") + " · " + formatFCFA(summary.subtotal);
+
+  cartSubtotalEl.textContent = formatFCFA(summary.subtotal);
+
+  cartItemsEl.innerHTML = ""; // clear
+  if (summary.list.length === 0) {
+    emptyCartMsg.style.display = "block";
+    cartItemsEl.appendChild(emptyCartMsg);
+  } else {
+    emptyCartMsg.style.display = "none";
+    summary.list.forEach(item => {
+      const row = document.createElement("div");
+      row.className = "cart-item";
+      const product = PRODUCTS.find(p => p.id === item.id);
+      row.innerHTML = `
+        <img src="${product.img}" alt="${product.name}" onerror="this.style.opacity=0.6">
+        <div class="cart-item-info">
+          <div class="cart-item-name">${product.name}</div>
+          <div class="small-muted">${formatFCFA(item.unitPrice)} / unit</div>
+          <div class="cart-item-qty">
+            <button class="qty-btn qty-decr" data-id="${item.id}" aria-label="Decrease">−</button>
+            <input class="qty-input" data-id="${item.id}" type="number" min="1" value="${item.qty}" />
+            <button class="qty-btn qty-incr" data-id="${item.id}" aria-label="Increase">+</button>
+            <div style="margin-left:auto;font-weight:700">${formatFCFA(item.lineTotal)}</div>
+            <button class="btn" title="Remove" style="margin-left:8px;padding:6px 8px;border-radius:8px;border:1px solid #eee;background:transparent" data-id="${item.id}">✕</button>
+          </div>
+        </div>
+      `;
+      cartItemsEl.appendChild(row);
+    });
+  }
+}
+
+/* Open/close cart */
+function openCart() {
+  cartOverlay.classList.add("open");
+  cartSidebar.classList.add("open");
+  cartSidebar.hidden = false;
+  cartOverlay.setAttribute("aria-hidden", "false");
+  cartSidebar.removeAttribute("hidden");
+}
+
+function closeCart() {
+  cartOverlay.classList.remove("open");
+  cartSidebar.classList.remove("open");
+  cartOverlay.setAttribute("aria-hidden", "true");
+  // keep hidden attribute until transition ends
+  setTimeout(() => {
+    cartSidebar.hidden = true;
+  }, 260);
+}
+
+/* Build WhatsApp message and open link */
+function buildWhatsAppMessage() {
+  const summary = cartSummary();
+  if (summary.list.length === 0) return null;
+
+  const name = (customerNameInput.value || "").trim();
+  const phone = (customerPhoneInput.value || "").trim();
+  const address = (customerAddressInput.value || "").trim();
+  const note = (customerNoteInput.value || "").trim();
+
+  let lines = [];
+  lines.push("✅ *New Carvi Food order*");
+  if (name) lines.push("Name: " + name);
+  if (phone) lines.push("Phone: " + phone);
+  if (address) lines.push("Address: " + address);
+  lines.push("");
+  lines.push("*Order details:*");
+
+  summary.list.forEach(it => {
+    lines.push("- " + it.name + " x" + it.qty + " = " + formatFCFA(it.lineTotal));
+    // indicate per-unit price and bulk logic if relevant
+    const prod = PRODUCTS.find(p => p.id === it.id);
+    if (prod && prod.bulk_threshold) {
+      const unit = unitPriceFor(prod, it.qty);
+      if (it.qty >= prod.bulk_threshold) {
+        lines.push("  (wholesale price: " + formatFCFA(unit) + " / unit)");
+      } else {
+        lines.push("  (retail price: " + formatFCFA(unit) + " / unit)");
+      }
+    }
+  });
+
+  lines.push("");
+  lines.push("Subtotal: " + formatFCFA(summary.subtotal));
+  if (note) {
+    lines.push("");
+    lines.push("Note: " + note);
+  }
+  lines.push("");
+  lines.push("Thank you!");
+
+  return lines.join("\n");
+}
+
+/* Event listeners */
+document.addEventListener("click", function(e) {
+  // add to cart buttons
+  if (e.target.closest(".add-to-cart")) {
+    const id = e.target.closest(".add-to-cart").dataset.id;
+    addToCart(id, 1);
+  }
+  // open cart
+  if (e.target.closest("#open-cart")) {
+    renderCart();
+    openCart();
+  }
+  // close cart
+  if (e.target.closest("#close-cart") || e.target.closest("#cart-overlay")) {
+    closeCart();
+  }
+  // clear cart
+  if (e.target.closest("#clear-cart")) {
+    if (confirm("Clear the cart?")) {
+      clearCart();
+    }
+  }
+  // quantity incr
+  if (e.target.closest(".qty-incr")) {
+    const id = e.target.closest(".qty-incr").dataset.id;
+    const cart = readCart();
+    const current = cart.items && cart.items[id] ? Number(cart.items[id].qty || 0) : 0;
+    setQty(id, current + 1);
+  }
+  // quantity decr
+  if (e.target.closest(".qty-decr")) {
+    const id = e.target.closest(".qty-decr").dataset.id;
+    const cart = readCart();
+    const current = cart.items && cart.items[id] ? Number(cart.items[id].qty || 0) : 0;
+    setQty(id, Math.max(0, current - 1));
+  }
+  // remove item via small ✕ button in item
+  if (e.target.matches(".cart-item .btn") && e.target.dataset && e.target.dataset.id) {
+    const id = e.target.dataset.id;
+    if (confirm("Remove this item?")) removeItem(id);
+  }
+});
+
+/* Handle manual change in quantity inputs (delegation) */
+cartItemsEl.addEventListener("change", function(e) {
+  if (e.target.matches(".qty-input")) {
+    const id = e.target.dataset.id;
+    let v = Number(e.target.value || 0);
+    if (isNaN(v) || v < 0) v = 0;
+    setQty(id, v);
+  }
+});
+
+/* Checkout button */
+checkoutBtn.addEventListener("click", function() {
+  const summary = cartSummary();
+  if (summary.list.length === 0) {
+    alert("Your cart is empty.");
+    return;
+  }
+
+  // phone is optional but recommended
+  const phoneVal = (customerPhoneInput.value || "").trim();
+  if (!phoneVal) {
+    const ok = confirm("You didn't provide a phone number. Continue?");
+    if (!ok) return;
+  }
+
+  const message = buildWhatsAppMessage();
+  if (!message) {
+    alert("Unable to generate message. Check your cart.");
+    return;
+  }
+
+  // encode message
+  const encoded = encodeURIComponent(message);
+  // use wa.me link (international format without +)
+  // the official number as requested: 221761397039
+  const waUrl = "https://wa.me/221761397039?text=" + encoded;
+
+  // open WhatsApp in new tab
+  window.open(waUrl, "_blank");
+
+  // optional: save last customer info for convenience
+  try {
+    const stored = {
+      last_customer_name: customerNameInput.value || "",
+      last_customer_phone: customerPhoneInput.value || "",
+      last_customer_address: customerAddressInput.value || ""
+    };
+    localStorage.setItem("carvi_last_contact", JSON.stringify(stored));
+  } catch (e) {}
+
+  // keep cart or clear? We'll keep it but you can clear automatically if desired.
+  // clearCart();
+});
+
+/* Load saved customer info (if any) */
+(function loadSavedCustomer() {
+  try {
+    const raw = localStorage.getItem("carvi_last_contact");
+    if (!raw) return;
+    const data = JSON.parse(raw);
+    if (data.last_customer_name) customerNameInput.value = data.last_customer_name;
+    if (data.last_customer_phone) customerPhoneInput.value = data.last_customer_phone;
+    if (data.last_customer_address) customerAddressInput.value = data.last_customer_address;
+  } catch (e) {}
+})();
+
+/* initial render */
+renderProducts();
+renderCart();
+
+/* wire open/close overlay */
+openCartBtn.addEventListener("click", function(e) {
+  renderCart();
+  openCart();
+});
+closeCartBtn.addEventListener("click", closeCart);
+cartOverlay.addEventListener("click", closeCart);
+
+/* Prevent form submit on enter in sidebar fields */
+[customerNameInput, customerPhoneInput, customerAddressInput, customerNoteInput].forEach(el => {
+  el.addEventListener("keydown", function(e) {
+    if (e.key === "Enter" && !(e.target.tagName === "TEXTAREA")) {
+      e.preventDefault();
+      checkoutBtn.click();
+    }
+  });
+});
+
+/* Set year in footer */
+document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+
+</body>
+</html>
